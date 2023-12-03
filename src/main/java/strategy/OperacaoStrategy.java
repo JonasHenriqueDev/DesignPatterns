@@ -32,7 +32,7 @@ class DivisaoStrategy implements OperacaoStrategy {
     }
 }
 
-class Calculadora {
+class Calculadora implements OperacaoStrategy {
     private OperacaoStrategy operacaoStrategy;
 
     public Calculadora(OperacaoStrategy operacaoStrategy) {
@@ -43,6 +43,7 @@ class Calculadora {
         this.operacaoStrategy = operacaoStrategy;
     }
 
+    @Override
     public double calcularOperacao(double a, double b) {
         return operacaoStrategy.calcularOperacao(a, b);
     }
